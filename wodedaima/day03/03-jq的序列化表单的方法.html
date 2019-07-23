@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <form action="" id="ff">
+
+    <input type="text" name="userNane">
+    <input type="password" name="password">
+    <input type="number" name="phone">
+
+    <input type="button" value="收集表单数据" id="btn">
+  </form>
+</body>
+<script src="../../static/js/jquery.js"></script>
+<script>
+$(function(){
+  $('#btn').on('click',function(){
+    // 该方法，把每个表单元素里面，根据name属性和value属性，组成一个键值对，然后组合成为url参数的形式
+    var result = $("#ff").serialize();
+    console.log(result);
+  });
+});
+</script>
+</html>

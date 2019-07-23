@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script src="../../static/js/jquery.js"></script>
+<script>
+/*
+  在web开发的远古时期
+    有一种语言： XML - 可拓展性标记语言
+      html就是其中一种可拓展性标记语言
+  很早之前，服务器和浏览器的数据交互就是依赖于这种格式
+*/
+// var arr = [
+//   {
+//     name : '狗蛋',
+//     age : 12,
+//     gender : '男'
+//   },
+//   {
+//     name : '熊大',
+//     age : 3,
+//     gender : '男'
+//   }
+// ];
+
+var xhr = new XMLHttpRequest();
+xhr.open('get','./data.xml');
+xhr.send();
+xhr.onreadystatechange = function(){
+  if(xhr.readyState == 4 && xhr.status == 200){
+    // console.log(xhr.responseText);
+    // console.log(xhr.responseXML);
+    // var id = xhr.responseXML.children[0].children[0].children[0].children[0].innerHTML;
+    // console.log(id);
+    // var ids = $(xhr.responseXML).find('id');
+    // console.log(ids);
+    // ids.each(function(i,e){
+    //   console.log(e);
+    // });
+  }
+}
+
+</script>
+</html>

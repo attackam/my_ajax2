@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+/*
+  ajax的新特性
+    1 超时 - 超过时限
+      可能在某个时间点的时候，用户的网络特别卡，设置一下超时，如果超时了，让用户重试
+
+      可以设置ajax对象的超时属性，如果请求的时间，超过了指定的时间，就会取消请求
+    2 超时的事件
+*/ 
+
+setInterval(function(){
+  console.log(1);
+}, 1000);
+
+var xhr = new XMLHttpRequest();
+xhr.open('get','http://127.0.0.1:8899/timeoutRequest');
+// 在请求发送出去之前设置一下超时的时间
+xhr.timeout = 3000;
+// 可以配合超时，设置一个超时事件
+xhr.ontimeout = function(){
+  console.log('请求超时，请重试');
+}
+xhr.send();
+xhr.onreadystatechange = function(){
+  if(xhr.readyState == 4 && xhr.status == 200){
+    console.log(xhr.responseText);
+  }
+}
+</script>
+</html>

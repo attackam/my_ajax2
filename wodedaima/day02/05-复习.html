@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /*
+    post请求
+      get 更多的是获取
+        1. 把数据是直接暴露在url里面的，不安全
+        2. url所能够携带的数据量是比较有限的，大概在4k左右
+      post 更多的是提交
+        1. post把数据写在请求体里面的，会有一定的保密效果，更加安全
+        2. post能够携带的数据，理论上是无上限的，除非是服务器端限制了post携带的数据量
+    post如何使用
+      ajax里面使用post请求的步骤
+        1.创建对象
+        var xhr = new XMLHttpRequest()
+        2.设置请求的方式和请求的地址 
+        xhr.open(请求方式,目标地址,是否异步)
+        3.设置请求头
+        xhr.setRequestHeader('Content-Type','告诉服务器如何解析携带回去的数据的一个固定值');
+        4.发送请求
+        xhr.send(数据);
+        5.监听状态变化事件
+        xhr.onreadystatechange = function(){
+          if(xhr.readyState == 4 && xhr.status == 200){}
+        }
+
+    开始封装
+        - 多些多问
+        - js里面如何实现异步数据的捕获 - 回调函数传参
+        - js里面如何实现随意的省略参数 - 对象传参
+    
+    登录效果
+        关注逻辑，关注实现的流程 - 业务
+
+    bootstrap的模态框
+        - 别人会封装很多组件给我们使用，需要时不时的去看看
+  */      
+</script>
+</html>

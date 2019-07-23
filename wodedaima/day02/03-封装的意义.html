@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+/*
+  什么是封装
+    就是把一些重复的代码，放到函数里面 - 初级封装
+    把函数封装到对象里面 - 高级封装
+  为什么要封装
+    为了让代码可以重复使用
+  函数
+
+  function fn(){}
+
+  如何封装
+    1.感受到代码的重复-把过程写个三五遍
+    2.把过程中那些感觉会变化的，抽离为参数
+    3.把所有的会变化的变成参数之后，整个过程中就都是不变的，把这些不变的直接作为函数体
+    4.按照函数的语法格式写代码
+    5.思考要不要修改返回值
+
+  异步的专业说法：
+    开辟一个新的线程，这个线程跟主线程是平行的，直到新的线程完成工作，会自动通知主线程
+*/
+
+// 一开始封装的ajajx函数
+// function ajax(type,url,callback,data){};
+
+// ajax('get','http://',function(){});
+
+// 我们以前使用别人的插件
+// var swiper = new Swiper('大容器的选择器',{
+//   effect : 'cube',
+//   loop : true  
+// })
+
+// 我们如果也想要实现随意省略某个参数
+function ajax(opt){
+  opt = opt || {};
+  opt.type = opt.type || 'get';
+  opt.url = opt.url || '';
+  opt.data = opt.data || {};
+  opt.callback = opt.callback || null;
+
+  for(var key in data){
+
+  }
+
+  callback && callback();
+};
+
+ajax({
+  url : 'http:127....'
+});
+
+</script>
+</html>

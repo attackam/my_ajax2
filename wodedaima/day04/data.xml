@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <array>
+    <person>
+      <id>1</id>
+      <name>狗蛋</name>
+      <age>12</age>
+      <gender>男</gender>
+    </person>
+    <person>
+      <id>2</id>
+      <name>熊大</name>
+      <age>3</age>
+      <gender>男</gender>
+    </person>
+  </array>
+</root>

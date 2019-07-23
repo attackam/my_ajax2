@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+
+<script src="../../static/js/template-web.js"></script>
+<script>
+/*
+  第二部： 写一个模板
+
+  第三步： 按照模板的语法写代码
+    输出语法
+      <%=变量 %>
+    判断语法
+
+    循环语法
+      <% for(var i =0; i < $data.length; i++) { %>
+        放你想要重复生成的结构
+      <% } %>
+  第四步：
+    导入输入
+      art-template这个插件提供了一个方法，专门用于导入数据
+      template(模板的id,数据)
+      数据仅仅支持对象或者数组
+
+      在模板里面有一个专门用于接收数据的占位符 $data
+      该方法有一个返回值： 是一个按照模板解析的字符串
+*/
+window.onload = function(){
+  // var result = template('tp',{name : '熊大'});
+  // console.log(result);
+
+  var arr = [
+    {name :'熊大'},
+    {name :'熊二'},
+    {name :'吉吉国王'}
+  ];
+
+  // var result = template('tp2',arr);
+  // console.log(result);
+
+  var result = template('tp3',arr);
+  console.log(result);
+}
+</script>
+<!-- 模板的要求： 1 script标签 2 有个属性 type 该属性不能是JavaScript 3 有一个id 
+  4 在模板的script里面，不要写注释
+-->
+<script type="text/tempalte" id="tp">
+  <div><%=$data.name%></div>
+</script>
+<script type="text/template" id="tp2">
+  <% for(var i =0; i < $data.length; i++){ %>
+    <div><%=$data[i].name%></div>
+  <% } %>
+</script>
+<script type="text/template" id="tp3">
+  {{each $data $value $index}}
+    <div>{{$value.name}}</div>
+  {{/each}}
+</script>
+</html>
